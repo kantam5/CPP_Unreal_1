@@ -57,12 +57,15 @@ void Knight::OnDamaged(Knight* attacker)
 	if (attacker == nullptr)
 		return;
 
-	if (IsDead())
-		return;
-
 	// 내 체력 깎는다
 	int damage = attacker->GetAttackDamage();
 	AddHp(-damage);
+
+	if (IsDead())
+		return;
+
+	if (damage <= 0)
+		return;
 
 	// 반격!
 	attacker->OnDamaged(this);	

@@ -36,10 +36,15 @@ int main()
 			{
 				// 여기서 같이 만들어준다
 				// 이런 저런 펫 정보 추가될 예정
-				Pet pet;
+
+				// ----- 이렇게 하면 pet이 스택에 올라가게 된다.
+				// 한번 while돌때마다 생성 삭제
+				// Pet pet;
+				
+				Pet* pet = new Pet();
 
 				// Archer를 만들 때 pet 정보도 넘겨준다
-				p = new Archer(&pet);
+				p = new Archer(pet);
 				p->_hp = 100;
 				p->_attack = 100;
 

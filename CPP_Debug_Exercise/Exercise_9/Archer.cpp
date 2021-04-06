@@ -24,6 +24,8 @@ void Archer::AddHp(int value)
 	// 죽었으면 펫도 날린다
 	if (IsDead())
 	{
+
+		// delete한 pet을 또 delete
 		if (_pet != nullptr)
 			delete _pet;
 		_pet = nullptr;

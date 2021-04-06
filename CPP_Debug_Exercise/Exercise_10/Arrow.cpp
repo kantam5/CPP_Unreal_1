@@ -23,6 +23,8 @@ void Arrow::AttackTarget()
 	{
 		// 데미지를 입힌다
 		_target->AddHp(-_damage);
+		// 가상함수이므로 가상함수 테이블에 접근
+		// 이상한 값에 접근 -> 크래쉬
 		_target->PrintInfo();
 	}
 }
